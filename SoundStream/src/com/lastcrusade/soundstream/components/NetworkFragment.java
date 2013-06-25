@@ -34,7 +34,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -143,6 +142,8 @@ public class NetworkFragment extends SherlockFragment implements ITitleable {
 
             @Override
             public void onClick(View v) {
+                //TODO: if not discovered, change back to white
+                v.findViewById(R.id.join_different_background).setBackgroundColor(getActivity().getResources().getColor(R.color.gray));
                 getConnectionService().broadcastSelfAsGuest(getActivity());
             }
         });
